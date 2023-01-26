@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const getItemsList = async () => {
       try {
-        const res = await axios.get('http://localhost:5500/api/items')
+        const res = await axios.get('https://todo-list-app-api.onrender.com/api/items')
         setListItems(res.data)
       } catch (err) {
         console.log(err)
@@ -29,7 +29,7 @@ function App() {
   const addItem = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5500/api/item', { item: itemText })
+      const res = await axios.post('https://todo-list-app-api.onrender.com/api/item', { item: itemText })
       setListItems(prev => [...prev, res.data]);
       setItemText('');
       setIsAdding('');
@@ -58,7 +58,7 @@ function App() {
   const updateItem = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:5500/api/item/${isUpdatind}`, { item: updateItemText })
+      const res = await axios.put(`https://todo-list-app-api.onrender.com/api/item/${isUpdatind}`, { item: updateItemText })
       const updatedItemIndex = listItems.findIndex(item => item._id === isUpdatind);
       const updatedItem = listItems[updatedItemIndex].item = updateItemText;
       setUpdateItemText('');
@@ -71,7 +71,7 @@ function App() {
   //Deleting items when click on delete
   const deleteItem = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5500/api/item/${id}`)
+      const res = await axios.delete(`https://todo-list-app-api.onrender.com/api/item/${id}`)
       const newListItems = listItems.filter(item => item._id !== id);
       setListItems(newListItems)
     } catch (err) {
