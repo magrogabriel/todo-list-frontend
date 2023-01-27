@@ -300,7 +300,14 @@
     width: 90vw;
   }
 
+  .form input[type="text"] {
+    width: 70%;
+  }
 
+  .update-new-input {
+    width: 70%;
+
+  }
 }
 
 @media (max-width: 500px) {
@@ -308,5 +315,14 @@
   .item-content-btns {
     flex-direction: column;
     margin-right: 20px;
+  }
+
+  .form button[type="submit"] {
+    margin-right: 0;
+  }
+
+  .update-new-btn {
+
+    margin-right: 0;
   }
 }
